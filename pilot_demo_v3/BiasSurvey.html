@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Voting strategy experiment</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- <script src="js/button control.js" type="text/javascript"></script> -->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>Voting strategy experiment<span>Bias Survey</span></h1>
+			</div> -->
+		</header>
+		<div class="demo">
+	        <div class="container">
+	            <div class="row pad-15">
+	            		 <center><h4 style="margin-top: 40px;">
+						 	1. If your party nominated a woman for president, would you vote for her if she were qualified for the job?
+						 </h4></center>
+				         <div class="range-slider" id="Q4-slider1">
+				            <input type="range" value="50" min="0" max="100">
+				            <span id="slider-id1" class="range-value">0</span>
+
+							<div class="row">
+								<div class="col-xs-2">
+									 <label style="text-align: left;
+									 font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;">
+									No, would not vote for here(0)</label>
+								</div>
+								<div class="col-xs-8" style="text-align: center;">
+									<label style="text-align:center;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Neutral uncertain(50)</label>
+
+								</div>
+								<div class="col-xs-2">
+									<label style="text-align:right;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Yes, would vote for her(100)</label>
+								</div>
+							</div>
+				        </div> 
+				        <center><h4 style="margin-top: 40px;">
+						 	2. Do you agree or disagree with this statement: Most men are better suited emotionally for polities than are most women.
+						 </h4></center>
+				        <div class="range-slider" id="Q4-slider2">
+				            <input type="range" value="50" min="0" max="100">
+				            <span id="slider-id2" class="range-value">0</span>
+				            <div class="row" style="margin-bottom: 40px;">
+								<div class="col-xs-2">
+									 <label style="text-align: left;
+									 font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;">
+									Disagree(0)</label>
+								</div>
+								<div class="col-xs-8" style="text-align: center;">
+									<label style="text-align:center;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Neutral uncertain(50)</label>
+
+								</div>
+								<div class="col-xs-2">
+									<label style="text-align:right;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Agree(100)</label>
+								</div>
+							</div>
+				        </div> 
+	            </div>
+
+
+				<center>
+					<!-- <div class="btn">
+						<a href="./End.html" class="myButton" onclick="slider_operation()">Submit</a>
+					</div> -->
+					<div class="instructionsnav">
+						<div class="row">
+							<div class="col-xs-2">
+								<!-- no previous button on first screen -->
+							</div>
+							<div class="col-xs-8">
+								<button type="button" id="next" value="next" class="btn btn-primary btn-lg continue" onclick="slider_operation()">Submit<span class="glyphicon glyphicon-arrow-right"></span>
+								</button>
+							</div>
+							<div class="col-xs-2">
+							</div>
+						</div>
+					</div>
+				</center>
+
+	        </div>
+	    </div>
+	<div class="related">
+    <h4>Copyright © CANLAB, All Rights Reserved.</h4>
+	<!-- <a href="Email: xxxxxx@colorado.edu">Email: xxxxxx@colorado.edu</a>	 -->	
+	</div>	
+	<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="js/button control.js" type="text/javascript"></script>
+	</div>
+	<script>
+		// function initial_all_sliders() {
+		// 	slider_div_names = ["E-Q2-slider1", "E-Q2-slider2"];
+		// 	default_value = 50;
+		// 	for (var i = 0; i < slider_div_names.length; i++) {
+		// 		var div = document.getElementById(slider_div_names[i]);
+		// 		var inputs = div.getElementsByTagName("input");
+		// 		inputs[0].value = default_value;
+		// 	}
+		// }
+
+		function slider_operation() {
+			// test_alert();
+			var name_values = [get_values()];
+			psiTurk.recordUnstructuredData("BiasSurvey", name_values);
+			psiTurk.saveData();
+			
+			psiTurk.showPage("End.html");
+		}
+
+		slider_display();
+
+		function display_slider_values(span_id) {
+			var slider_value = document.getElementById(span_id).innerText;
+			console.log(slider_value);
+			return slider_value;
+		}
+
+		function get_values() {
+			slider_idx = ["slider-id1", "slider-id2"]
+			question_values = []
+			for (var i = 0; i < slider_idx.length; i++) {
+				question_values.push(display_slider_values(slider_idx[i]));
+			}
+			// alert(question_values);
+			return question_values;
+		}
+
+		function slider_display () {
+			var slider = $('.range-slider');
+			// var slider = $('#E1-slider1')
+			// var slider = document.getElementById("E1-slider1")
+				range = $('.range-slider input[type="range"]');
+				value = $('.range-value');
+			
+			// var la = 0;
+			var current_slider_values = [];
+			slider.each(function(){
+				value.each(function(){
+					var value = $(this).prev().attr('value');
+					$(this).html(value);
+				});
+				range.on('input', function(){
+					$(this).next(value).html(this.value);
+					// console.log(value.prev().attr('value')); // this is the current slider value
+					
+					// console.log(la % 5);
+					// if (la % 5 == 0) {
+					// 	var div = document.getElementById("E1-slider1");
+					// 	var spans = div.getElementsByTagName("span");
+					// 	// console.log(spans[0].innerText)
+					// 	var inputs = div.getElementsByTagName("input");
+					// 	inputs[0].value = this.value;
+					// 	console.log(inputs[0].value)
+					// }
+					// la += 1;
+
+					var idx = $(this).next(value).attr('id');
+					var div = document.getElementById("Q4-slider" + idx.slice(-1));
+					var spans = div.getElementsByTagName("span");
+					// console.log(spans[0].innerText)
+					var inputs = div.getElementsByTagName("input");
+					inputs[0].value = this.value;
+					spans[0].value = this.value;
+					display_slider_values("slider-id" + idx.slice(-1))
+				});
+				console.log("sdfasdfs");
+			});
+			// console.log("safasdfsadf")
+		};
+	</script>
+</body>
+</html>

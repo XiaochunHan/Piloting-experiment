@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- 
+  The consent.html displays the text of your IRB-approved
+  consent form.  Even if you are not required to provide
+  a consent form, it is helpful to use this form to 
+  describe what people can do if an error comes up, etc...
+
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Public Opinions of Politicians - Informed Consent Form</title>
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+        <link rel="icon" href="/static/favicon.ico" />
+        <script type="text/javascript">
+            function onexit() {
+              self.close(); // no harm, no foul here
+            }
+        </script>
+		<style>
+			@media print {
+				body * {
+					visibility: hidden;
+				}
+				.legal, .legal * {
+					visibility: visible;
+				}
+				.legal {
+					position: absolute;
+					left: 0;
+					top: 0;
+					overflow:visible;
+				} 
+			}
+		</style>
+    </head>
+    <body>
+        <div id="container-consent">
+            <div id="consent">
+                <h1>We need your consent to proceed</h1>
+                <hr />
+                <div class="legal well" style="font-size: 16px;">
+                    <h2>Title of research study</h2>
+                    <p>Public opinions of politicians</p>
+
+                    <h2>IRB Protocol Number</h2>
+                    <p>19-0183 </p>
+
+                    <h2>Investigator</h2>
+                    <p>Tor Wager, PhD </p>
+
+                    <h2>Purpose of the Study</h2>
+                    <p>The purpose of the study is to help our team to better understand the public opinions towards the potential state senate candidates in the 2020 congressional election. </br>We expect that you will be in this research study for 30 minutes. </br>We expect about 750 people will be in this research study. </p>
+
+                    <h2>Explanation of Procedures</h2>
+                    <p>If you agree to participate in this study, you will be shown a series of photos of potential state senate candidates, and information about candidates such as news report about the candidates. </br>Your task is to rate how much you would support the candidates in the 2020 congressional election. You will also be asked to fill out some questionnaires about your demographic information and personal political ideology. </br>We cannot tell you everything about what we are doing in this study or why. A full explanation of the purpose of the research and procedures will be provided after you complete the study.</p>
+
+                                        
+
+                    <h2>Voluntary Participation and Withdrawal </h2>
+                    <p>Whether or not you take part in this research is your choice. You can leave the research at any time and it will not be held against you.</p>
+
+                    <h2>Risks and Discomforts</h2>
+                    <p>There will be no potential harm to you.</p>
+
+                    <h2>Confidentiality</h2>
+                    <p>Information obtained about you for this study will be kept confidential to the extent allowed by law. Research information that identifies you may be shared with the University of Colorado Boulder Institutional Review Board (IRB) and others who are responsible for ensuring compliance with laws and regulations related to research, including people on behalf of the Office for Human Research Protections. The information from this research may be published for scientific purposes; however, your identity will not be given out. </p>
+
+                    <h2>Payment for Participation</h2>
+                    <p>If you agree to take part in this research study, we will pay you $3 for your time and effort. Payments will be made through the MTurk platform after the aiming 750 participants data collection completed. However, you will not receive payment if you do not complete all experimental procedures.</br>It is important to know that payment for participation is taxable income.</p>
+
+
+                    <h2>Questions</h2>
+                    <p>If you have questions, concerns, or complaints, or think the research has hurt you, talk to the research team at the Cognitive and Affective Neuroscience Laboratory at the University of Colorado at Boulder’s Department of Psychology, 345 UCB, Boulder, CO 80309-0345. The lab can be reached at 303-492-4299.  You can also contact the Principal Investigator, Tor Wager, PhD at <a href="tor.wager@colorado.edu">tor.wager@colorado.edu</a></br>
+                    This research has been reviewed and approved by an IRB. You may talk to them at (303) 735-3702 or <a href="irbadmin@colorado.edu">irbadmin@colorado.edu</a> if:</br>
+                    •   Your questions, concerns, or complaints are not being answered by the research team.</br>
+                    •   You cannot reach the research team.</br>
+                    •   You want to talk to someone besides the research team.</br>
+                    •   You have questions about your rights as a research subject.</br>
+                    •   You want to get information or provide input about this research. </p>
+
+
+<!--                     <p>
+                    You have been invited to take part in a research study named BLAH BLAH
+                    </p>
+                    <p>
+                    Put your consent form here.  If you are a worker and are viewing this
+                    please decline the HIT.  This requester doesn't know what they are doing.
+                    </p> -->
+
+                    <button type="button" class="btn btn-default btn-sm" onClick="window.print();">
+                    <span class="glyphicon glyphicon-print"></span> Print a copy of this
+                    </button>
+                </div>
+
+                <hr />
+                <h4>Signatures(Participant will click either “I agree”, to consent to this document, or “No thanks” to not consent to this document) </h4>
+                <br />
+
+                <center>
+                    <button type="button" class="btn btn-primary btn-lg" onClick="window.location='/exp?hitId={{ hitid }}&assignmentId={{ assignmentid }}&workerId={{ workerid }}'">
+                    <span class="glyphicon glyphicon-ok"></span> I agree 
+                    </button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger btn-lg" onClick="onexit()">
+                    <span class="glyphicon glyphicon-ban-circle"></span> No thanks, I do not want to do this HIT
+                    </button>
+                </center>
+
+            </div>
+        </div>
+    </body>
+</html>
+

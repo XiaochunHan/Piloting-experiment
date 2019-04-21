@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Voting strategy experiment</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- <script src="js/button control.js" type="text/javascript"></script> -->
+	<script src="js/require.js" type="text/javascript"></script>
+	<!-- <script type='text/javascript' src='http://requirejs.org/docs/release/2.1.5/r.js'></script>   -->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>Voting strategy experiment<span>Questionnaire</span></h1>
+
+
+			<!--<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="index" title="Come back home" ><span> Homepage</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/Form/201812285474.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div> -->
+		</header>
+<!--page 1 pre-survey-->
+
+		<div class="demo">
+	        <div class="container">
+	            <div class="row pad-15">
+	            	<p>
+	            		1. Do you identify as a Democrat? 
+	            	</p>
+					<div class="range-slider" id="Q3-slider1">
+			            <input type="range" value="50" min="0" max="100">
+			            <span id="slider-id1"class="range-value">0</span>
+			            <div class="row">
+								<div class="col-xs-2">
+									 <label style="text-align: left;
+									 font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;">
+									Not at all(0)</label>
+								</div>
+								<div class="col-xs-8" style="text-align: center;">
+									<label style="text-align:center;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Neutral/Uncertain(50)</label>
+
+								</div>
+								<div class="col-xs-2">
+									<label style="text-align:right;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Extremely Democrat(100)</label>
+								</div>
+							</div>
+
+			        </div> 
+
+			        <p>
+	            		2. Do you identify as a Republican? 
+	            	</p>
+					<div class="range-slider" id="Q3-slider2">
+			            <input type="range" value="50" min="0" max="100">
+			            <span id="slider-id2" class="range-value">0</span>
+						<div class="row">
+								<div class="col-xs-2">
+									 <label style="text-align: left;
+									 font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;">
+									Not at all(0)</label>
+								</div>
+								<div class="col-xs-8" style="text-align: center;">
+									<label style="text-align:center;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Neutral/Uncertain(50)</label>
+
+								</div>
+								<div class="col-xs-2">
+									<label style="text-align:right;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Extremely Republican(100)</label>
+								</div>
+							</div>
+			        </div> 
+
+			        <p>
+			        	3. How conservative are you in political ideology?
+	            	</p>
+					<div class="range-slider" id="Q3-slider3">
+			            <input type="range" value="50" min="0" max="100">
+			            <span id="slider-id3" class="range-value">0</span>
+			  			<div class="row">
+								<div class="col-xs-2">
+									 <label style="text-align: left;
+									 font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;">
+									Not at all(0)</label>
+								</div>
+								<div class="col-xs-8" style="text-align: center;">
+									<label style="text-align:center;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Neutral/Uncertain(50)</label>
+
+								</div>
+								<div class="col-xs-2">
+									<label style="text-align:right;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Extremely conservative(100)</label>
+								</div>
+							</div>
+			        </div> 
+			        <p>
+			        	4. How liberal are you in political ideology?
+	            	</p>
+					<div class="range-slider" id="Q3-slider4">
+			            <input type="range" value="50" min="0" max="100">
+			            <span id="slider-id4" class="range-value">0</span>
+						<div class="row">
+								<div class="col-xs-2">
+									 <label style="text-align: left;
+									 font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;">
+									Not at all(0)</label>
+								</div>
+								<div class="col-xs-8" style="text-align: center;">
+									<label style="text-align:center;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Neutral/Uncertain(50)</label>
+
+								</div>
+								<div class="col-xs-2">
+									<label style="text-align:right;
+									font-size: 12px;
+									 color: #2d8659; 
+									 margin-bottom: 40px;" >Extremely liberal(100)</label>
+								</div>
+							</div>
+			        </div> 
+			        <p>
+			        	5. Are you a member of a political party? If yes, please specify; if not, please enter "N/A".
+	            	</p>
+	            	<input class="fs-anim-lower" id="pol-1-q5" name="q1" type="string" placeholder="please indicate" required>
+
+
+            		<center>
+						<!-- <div class="btn">
+						<a href="./Questionnaire02.html" class="myButton" onclick="slider_operation()">Submit</a>
+						</div> -->
+						<div class="instructionsnav">
+							<div class="row">
+								<div class="col-xs-2">
+									<!-- no previous button on first screen -->
+								</div>
+								<div class="col-xs-8">
+									<button type="button" id="next" value="next" class="btn btn-primary btn-lg continue" onclick="slider_operation()">
+									Next <span class="glyphicon glyphicon-arrow-right"></span>
+									</button>
+								</div>
+								<div class="col-xs-2">
+								</div>
+							</div>
+						</div>
+					</center>
+
+            </div>
+        </div>
+    </div>
+		<div class="related">
+		    <h4>Copyright © CANLAB, All Rights Reserved.</h4>
+			<!-- <a href="Email: xxxxxx@colorado.edu">Email: xxxxxx@colorado.edu</a> -->
+			
+		</div>
+	</div>
+	
+	<!-- <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="js/button control.js" type="text/javascript"></script>
+	<script src="data_store_test/app.js"></script> -->
+	<script>
+		// function initial_all_sliders() {
+		// 	slider_div_names = ["E-Q2-slider1", "E-Q2-slider2"];
+		// 	default_value = 50;
+		// 	for (var i = 0; i < slider_div_names.length; i++) {
+		// 		var div = document.getElementById(slider_div_names[i]);
+		// 		var inputs = div.getElementsByTagName("input");
+		// 		inputs[0].value = default_value;
+		// 	}
+		// }
+
+		function slider_operation() {
+			// test_alert();
+
+			var text_value = document.getElementById("pol-1-q5").value;
+			var name_values = [get_values()];
+
+						console.log("abc");
+				if (text_value == null || text_value == '') {
+				alert("Question 5 is not answered!!");
+				// psiTurk.showPage("pre-survey.html");
+				event.stopPropagation();
+				return;}
+
+				console.log("def");
+
+
+
+
+
+			psiTurk.recordUnstructuredData("PolPart1", name_values);
+			psiTurk.recordUnstructuredData("Pol_1_Q5", text_value);
+			psiTurk.saveData();
+
+			psiTurk.showPage("Questionnaire02.html");
+		}
+
+		slider_display();
+
+		function display_slider_values(span_id) {
+			var slider_value = document.getElementById(span_id).innerText;
+			console.log(slider_value);
+			return slider_value;
+		}
+
+		function get_selection(q_name) {
+			var x = document.getElementsByName(q_name);
+			var select_check = false;
+			for (var i = 0; i < x.length; i++) {
+				if(x[i].checked == true){
+					select_check = true;
+					// console.log(x[i].value);
+					// if (i == 2 && q_name == "answer3") {
+					// 	return document.getElementById("q3").value;
+					// }
+
+					// if (i == 4 && q_name == "answer6") {
+					// 	return document.getElementById("q6").value;
+					// }
+
+					// if (i == 0) {
+					// 	return 1;
+					// } else {
+					// 	return x[i].value;
+					// }
+					return x[i].value;
+				}
+			}
+
+			if (select_check == false) {
+				return null;
+			}
+		}
+
+
+		function get_values() {
+			slider_idx = ["slider-id1", "slider-id2", "slider-id3", "slider-id4"]
+			question_values = []
+			for (var i = 0; i < slider_idx.length; i++) {
+				question_values.push(display_slider_values(slider_idx[i]));
+			}
+			// alert(question_values);
+			return question_values;
+		}
+		// function check_value(){
+		// 	console.log("abc");
+
+		// 	var text_value = document.getElementById("pol-1-q5").value;
+		// 		if (test_values == null || test_values == '') {
+		// 		alert("Question 5 is not answered!!");
+		// 		// psiTurk.showPage("pre-survey.html");
+		// 		event.stopPropagation();
+		// 		return;}
+
+		// 		console.log("def");
+		// }
+
+		function slider_display () {
+			var slider = $('.range-slider');
+			// var slider = $('#E1-slider1')
+			// var slider = document.getElementById("E1-slider1")
+				range = $('.range-slider input[type="range"]');
+				value = $('.range-value');
+			
+			// var la = 0;
+			var current_slider_values = [];
+			slider.each(function(){
+				value.each(function(){
+					var value = $(this).prev().attr('value');
+					$(this).html(value);
+				});
+				range.on('input', function(){
+					$(this).next(value).html(this.value);
+					// console.log(value.prev().attr('value')); // this is the current slider value
+					
+					// console.log(la % 5);
+					// if (la % 5 == 0) {
+					// 	var div = document.getElementById("E1-slider1");
+					// 	var spans = div.getElementsByTagName("span");
+					// 	// console.log(spans[0].innerText)
+					// 	var inputs = div.getElementsByTagName("input");
+					// 	inputs[0].value = this.value;
+					// 	console.log(inputs[0].value)
+					// }
+					// la += 1;
+
+					var idx = $(this).next(value).attr('id');
+					var div = document.getElementById("Q3-slider" + idx.slice(-1));
+					var spans = div.getElementsByTagName("span");
+					// console.log(spans[0].innerText)
+					var inputs = div.getElementsByTagName("input");
+					inputs[0].value = this.value;
+					spans[0].value = this.value;
+					display_slider_values("slider-id" + idx.slice(-1))
+				});
+				console.log("sdfasdfs");
+			});
+			// console.log("safasdfsadf")
+		};
+
+	</script>
+</body>
+</html>
