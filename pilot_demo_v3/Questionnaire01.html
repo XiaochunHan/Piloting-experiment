@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
@@ -15,7 +15,7 @@
 <body>
 	<div class="htmleaf-container">
 		<header class="htmleaf-header">
-			<h1>Voting strategy experiment<span>Questionnaire</span></h1>
+			<h1>Public Opinions of Politicians<span>Post-survey</span></h1>
 
 
 			<!--<div class="htmleaf-links">
@@ -27,7 +27,7 @@
 
 		<div class="demo">
 	        <div class="container">
-	            <div class="row pad-15">
+	            <div class="row pad-15" style="margin-left: 20px;">
 	            	<p>
 	            		1. Do you identify as a Democrat? 
 	            	</p>
@@ -221,6 +221,18 @@
 			psiTurk.saveData();
 
 			psiTurk.showPage("Questionnaire02.html");
+
+
+			var scrollToTop = window.setInterval(function() {
+			    var pos = window.pageYOffset;
+			    if ( pos > 0 ) {
+			        window.scrollTo( 0, pos - 20 ); // how far to scroll on each step
+			    } else {
+			        window.clearInterval( scrollToTop );
+			    }
+			}, 16); // how fast to scroll (this equals roughly 60 fps)
+
+
 		}
 
 		slider_display();

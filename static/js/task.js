@@ -29,11 +29,11 @@ var pages = [
 	"SSSSurvey.html",
 	"ExperimentPre.html",
 	"Experiment01.html",
+	"Exp2Pre.html",
 	"Experiment02.html", 
 	"QuestionnairePre.html",
 	"Questionnaire01.html",
 	"Questionnaire02.html",
-	"BiasSurveyPre.html",
 	"BiasSurvey.html",
 	"End.html"
 ];
@@ -55,11 +55,11 @@ var instructionPages = [
 	"SSSSurvey.html",
 	"ExperimentPre.html",
 	"Experiment01.html",
+	"Exp2Pre.html",
 	"Experiment02.html", 
 	"QuestionnairePre.html",
 	"Questionnaire01.html",
 	"Questionnaire02.html",
-	"BiasSurveyPre.html",
 	"BiasSurvey.html",
 	"End.html"
 ];

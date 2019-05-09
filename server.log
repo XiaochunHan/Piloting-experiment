@@ -2373,3 +2373,1004 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 85, in _get_source_fast
     raise TemplateNotFound(template)
 TemplateNotFound: undefined
+[2019-04-23 15:28:40 -0600] [15782] [CRITICAL] WORKER TIMEOUT (pid:15785)
+[2019-04-23 15:28:43 -0600] [17389] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+[2019-04-23 15:30:45 -0600] [17515] [CRITICAL] WORKER TIMEOUT (pid:17518)
+[2019-04-23 16:39:49 -0600] [18379] [CRITICAL] WORKER TIMEOUT (pid:18382)
+[2019-04-23 16:39:54 -0600] [18843] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+[2019-04-24 17:37:07 -0600] [6811] [CRITICAL] WORKER TIMEOUT (pid:6814)
+[2019-04-24 19:11:37 -0600] [6811] [CRITICAL] WORKER TIMEOUT (pid:7008)
+[2019-04-24 19:35:42 -0600] [6811] [CRITICAL] WORKER TIMEOUT (pid:7825)
+[2019-04-25 01:52:27 -0600] [6811] [CRITICAL] WORKER TIMEOUT (pid:7865)
+[2019-04-25 02:31:38 -0600] [6811] [CRITICAL] WORKER TIMEOUT (pid:13925)
+[2019-04-25 03:06:24 -0600] [6811] [CRITICAL] WORKER TIMEOUT (pid:13986)
+[2019-04-25 03:43:54 -0600] [6811] [CRITICAL] WORKER TIMEOUT (pid:14092)
+[2019-04-25 04:18:36 -0600] [6811] [CRITICAL] WORKER TIMEOUT (pid:14215)
+[2019-04-25 06:21:42 -0600] [6811] [CRITICAL] WORKER TIMEOUT (pid:14269)
+[2019-04-25 06:34:10 -0600] [6811] [CRITICAL] WORKER TIMEOUT (pid:14398)
+[2019-04-25 09:43:29 -0600] [18571] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 187, in handle_request
+    six.reraise(exc_info[0], exc_info[1], exc_info[2])
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    resp.write(item)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 347, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 302, in write
+    sock.sendall(data)
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 41] Protocol wrong type for socket
+[2019-04-25 10:30:00 -0600] [18568] [CRITICAL] WORKER TIMEOUT (pid:18571)
+[2019-04-25 10:30:00 -0600] [17331] [CRITICAL] WORKER TIMEOUT (pid:17355)
+[2019-04-25 10:59:40 -0600] [18568] [CRITICAL] WORKER TIMEOUT (pid:18881)
+[2019-04-25 10:59:40 -0600] [17331] [CRITICAL] WORKER TIMEOUT (pid:18882)
+[2019-04-25 10:59:54 -0600] [19060] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+[2019-04-25 10:59:54 -0600] [19059] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+[2019-04-25 12:28:45 -0600] [20939] [CRITICAL] WORKER TIMEOUT (pid:20942)
+[2019-04-25 12:28:49 -0600] [20986] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+[2019-04-25 12:29:21 -0600] [21041] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+[2019-04-25 12:33:00,024] ERROR in app: Exception on /tor.wager@colorado.edu [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 731, in regularpage
+    return render_template(pagename)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 133, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 57, in get_source
+    return self._get_source_fast(environment, template)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 85, in _get_source_fast
+    raise TemplateNotFound(template)
+TemplateNotFound: tor.wager@colorado.edu
+[2019-04-26 18:32:46 -0600] [3277] [CRITICAL] WORKER TIMEOUT (pid:3280)
+[2019-04-26 19:08:29 -0600] [3277] [CRITICAL] WORKER TIMEOUT (pid:3402)
+[2019-04-26 20:30:35 -0600] [3277] [CRITICAL] WORKER TIMEOUT (pid:3409)
+[2019-04-26 21:02:14 -0600] [3277] [CRITICAL] WORKER TIMEOUT (pid:3424)
+[2019-04-27 01:48:58 -0600] [3277] [CRITICAL] WORKER TIMEOUT (pid:3432)
+[2019-04-27 03:50:06 -0600] [3277] [CRITICAL] WORKER TIMEOUT (pid:4411)
+[2019-04-27 05:51:58 -0600] [3277] [CRITICAL] WORKER TIMEOUT (pid:4430)
+[2019-04-27 07:54:23 -0600] [3277] [CRITICAL] WORKER TIMEOUT (pid:4487)
+[2019-04-27 09:29:27 -0600] [3277] [CRITICAL] WORKER TIMEOUT (pid:4508)
+[2019-04-27 10:27:33 -0600] [3277] [CRITICAL] WORKER TIMEOUT (pid:4517)
+[2019-04-27 10:45:06 -0600] [5347] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 187, in handle_request
+    six.reraise(exc_info[0], exc_info[1], exc_info[2])
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    resp.write(item)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/http/wsgi.py", line 347, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 302, in write
+    sock.sendall(data)
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 41] Protocol wrong type for socket
+[2019-04-27 11:18:43,887] ERROR in app: Exception on /tor.wager@colorado.edu [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 731, in regularpage
+    return render_template(pagename)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 133, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 57, in get_source
+    return self._get_source_fast(environment, template)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 85, in _get_source_fast
+    raise TemplateNotFound(template)
+TemplateNotFound: tor.wager@colorado.edu
+[2019-04-27 11:19:14 -0600] [5566] [CRITICAL] WORKER TIMEOUT (pid:5574)
+[2019-04-27 11:56:25 -0600] [5566] [CRITICAL] WORKER TIMEOUT (pid:5596)
+[2019-04-27 12:36:12 -0600] [5566] [CRITICAL] WORKER TIMEOUT (pid:6016)
+[2019-04-27 13:54:34 -0600] [5566] [CRITICAL] WORKER TIMEOUT (pid:6027)
+[2019-04-27 14:17:36 -0600] [5566] [CRITICAL] WORKER TIMEOUT (pid:6054)
+[2019-04-27 19:39:47 -0600] [5566] [CRITICAL] WORKER TIMEOUT (pid:6105)
+[2019-04-27 20:12:55 -0600] [5566] [CRITICAL] WORKER TIMEOUT (pid:8631)
+[2019-04-30 12:20:17 -0600] [40996] [CRITICAL] WORKER TIMEOUT (pid:41001)
+[2019-04-30 12:20:23 -0600] [41578] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 515, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 122, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 130, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment_server.py", line 48, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/usr/local/lib/python2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+  File "/usr/local/lib/python2.7/site-packages/psiturk/experiment.py", line 89, in <module>
+    init_db()
+  File "/usr/local/lib/python2.7/site-packages/psiturk/db.py", line 39, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/sql/schema.py", line 4287, in create_all
+    ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2032, in _run_visitor
+    with self._optional_conn_ctx_manager(connection) as conn:
+  File "/usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2024, in _optional_conn_ctx_manager
+    with self._contextual_connect() as conn:
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 354, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 751, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 483, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 138, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/impl.py", line 135, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 299, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 428, in __init__
+    self.__connect(first_connect_check=True)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/pool/base.py", line 630, in __connect
+    connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python2.7/site-packages/psycopg2/__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+OperationalError: (psycopg2.OperationalError) could not translate host name "ec2-184-72-238-22.compute-1.amazonaws.com" to address: nodename nor servname provided, or not known
+
+(Background on this error at: http://sqlalche.me/e/e3q8)
+[2019-04-30 13:01:22 -0600] [42890] [CRITICAL] WORKER TIMEOUT (pid:42893)
+[2019-04-30 13:01:54 -0600] [42890] [CRITICAL] WORKER TIMEOUT (pid:42934)
